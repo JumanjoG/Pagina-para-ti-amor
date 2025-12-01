@@ -1,0 +1,249 @@
+/*General*/
+*{
+    font-family:verdana;
+}
+
+h1{
+    font-family:'Lucida Sans';
+    text-transform: uppercase;
+}
+
+/*Encabezado*/
+header{
+    background: linear-gradient(135deg, #020d74, #a72a03 100%);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/*Barra de navegacion*/
+
+nav{
+background: linear-gradient(135deg, #020d74, #a72a03 100%);
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    border-right: #f5e1e1 solid;
+    border-left: #f5e1e1 solid;;
+    margin-right: 40px;
+}
+
+nav li{
+    border-right: #f5e1e1 solid;
+}
+nav li:last-child{
+    border-right: none;
+}
+
+nav a{
+    color: #f9f9f9;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+}
+nav a:hover{
+    background:linear-gradient(135deg, #a72a03, #020d74 100%);
+    margin-top: 30px;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: 0.6s;
+}
+
+/* Cuerpo */
+body{
+    background-color: #ebdabb;
+    background-image: url();
+    margin:0 0 0 0;
+    border-top: black solid 6px;
+}
+
+
+.Contenido {
+    margin-left: 30%;
+    padding: 40px;
+}
+
+.Articulo{
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: #f5e1e1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.Articulo H4{
+    opacity: .5;
+}
+
+.Articulo p{
+    padding: 20px;
+}
+
+.Titulo{
+    width: 90%;
+    padding: 15px;
+    border-bottom: #222026 solid;
+    border-right: #222026 solid;
+}
+.Titulo h2{
+    font-family:'Lucida Sans';
+    text-transform: uppercase;
+}
+.DatosDeNoticia{
+    width: 50%;
+    padding: 10px;
+    border-bottom: #383534 solid;
+}
+
+.LogoDato{
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 40px;
+}
+.Nota{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 15px;
+}
+.Nota img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    /*
+    object-fit: cover;
+    width: auto;
+    height: 50%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    */
+}
+.Fila {
+    display: flex;                  
+    justify-content: space-between; 
+    align-items: stretch;           
+}
+
+.PieDeSeccion{
+    margin: 20px;
+    padding-bottom: 40px;
+}
+
+.PieDeSeccion button{
+    background-color: rgb(247, 243, 237);
+    color: black;
+    border: none;
+    padding: 20px 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    
+}
+.PieDeSeccion span img{
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
+    float: inline-end;
+}
+span img :hover{
+transform: scale(1.2);
+}
+
+.PieDeSeccion button:hover{
+    background-color: #ddd7d7;
+    transform: scale(1.15);
+}
+
+.PieDeSeccion span{
+    float: inline-end;
+    text-decoration-line: underline;
+
+}
+
+/*Barra Lateral*/
+
+aside{
+    background-color: #f5e1e1;
+    color: #222026;
+    width: 26%;
+    height: max-content;
+    padding: 20px 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    position:static;
+    margin-left: 35px;
+    margin-top: 50px;
+    float:left;
+}
+
+.bl-tt{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.bl-tt p{
+    opacity: .80;
+}
+
+aside .LogoTitulo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.bl-t{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.Tema{
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 50px;
+}
+.Tema img{
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+.Tema :hover{
+    transform: scale(1.1)
+}
+/*Pie de pagina*/
+
+footer{
+    background: linear-gradient(135deg, #a72a03, #020d74 100%);
+    color: white;
+    padding: 15px 0;
+    
+}
+.pie-pagina{
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 10px;
+}
+.pie-pagina p{
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.imagenes-redes-sociales img {
+    width: 40px; 
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.imagenes-redes-sociales img:hover {
+    transform: scale(1.2);
+}
