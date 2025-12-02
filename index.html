@@ -28,7 +28,7 @@
     <aside class="BarraLateral">
 
         <div class="bl-tt">
-            <img src="Imagenes/New Logo.jpg"  class="LogoTitulo">
+            <img src="New Logo.jpg"  class="LogoTitulo">
             <h1>Spiderman</h1>
             <p>Si buscas saber más</p>
         </div>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="DatosDeNoticia">
                     <h4>Febrero 08, 2020</h4>
-                    <img src="Imagenes/New Logo.jpg"  class="LogoDato">
+                    <img src="New Logo.jpg"  class="LogoDato">
                     <h4>Jomalu</h4>
                 </div>
             </div>
@@ -103,7 +103,7 @@
             </div>
             <div class="PieDeSeccion">
                 <button class="leermas">Leer mas</button>            
-                <span><button class="like" onclick="alternar()">Like</button> <img id="img1" src="Imagenes/unlike.png" alt=""> </span>
+                <span><button class="like" onclick="alternar()">Like</button> <img id="img1" src="unlike.png" alt=""> </span>
         </Article>
 
         <Article class="Articulo">
@@ -114,7 +114,7 @@
                 </div>
                 <div class="DatosDeNoticia">
                     <h4>Abril 15, 2023</h4>
-                    <img src="Imagenes/New Logo.jpg"  class="LogoDato">
+                    <img src="New Logo.jpg"  class="LogoDato">
                     <h4>Jomalu</h4>
                 </div>
             </div>
@@ -125,7 +125,7 @@
             </div>
             <div class="PieDeSeccion">
                 <button class="leermas">Leer mas</button>             
-                <span> <button class="like" onclick="alternar2()">Like</button><img id="img2" src="Imagenes/unlike.png"> </span>
+                <span> <button class="like" onclick="alternar2()">Like</button><img id="img2" src="unlike.png"> </span>
         </Article>
 
         <Article class="Articulo">
@@ -136,7 +136,7 @@
                 </div>
                 <div class="DatosDeNoticia">
                     <h4>Noviembre 10, 2025</h4>
-                    <img src="Imagenes/New Logo.jpg"  class="LogoDato">
+                    <img src="New Logo.jpg"  class="LogoDato">
                     <h4>Jomalu</h4>
                 </div>
             </div>
@@ -147,7 +147,7 @@
             </div>
             <div class="PieDeSeccion">
                 <button class="leermas">Leer mas</button>            
-                <span> <button class="like" onclick="alternar3()">Like</button><img id="img3" src="Imagenes/unlike.png" alt=""> 
+                <span> <button class="like" onclick="alternar3()">Like</button><img id="img3" src="unlike.png" alt=""> 
                 </span>
 
         </Article>
@@ -184,11 +184,31 @@
                         float=1;
     function alternar(){
         if (float == 1){
-            document.getElementById("img1").src="Imagenes/like.png";
+            document.getElementById("img1").src="like.png";
             float = 0;
             
         } else {
-            document.getElementById("img1").src="Imagenes/unlike.png";
+            document.getElementById("img1").src="unlike.png";
+            float = 1;
+        }
+    } 
+                        function alternar2(){
+        if (float == 1){
+            document.getElementById("img2").src="like.png";
+            float = 0;
+            
+        } else {
+            document.getElementById("img2").src="unlike.png";
+            float = 1;
+        }
+    } 
+                        function alternar3(){
+        if (float == 1){
+            document.getElementById("img3").src="like.png";
+            float = 0;
+            
+        } else {
+            document.getElementById("img3").src="unlike.png";
             float = 1;
         }
     } 
