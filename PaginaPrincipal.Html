@@ -1,197 +1,436 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spiderfans</title>
-    <link rel="stylesheet" href="Diseño.Css">
-</head>
-<body> 
-    
-        
-    <header>
-       <h1>Spiderfans</h1>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jax 💜 Marilu · El conejo de mi circo</title>
+  <!-- Font Awesome 6 (gratis) para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ========== RESET Y VARIABLES ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-     <nav>
-         <ul>
-            <li> <a href="https://spider-man.fandom.com/es/wiki/Spider-Man_Wiki">Spiderman</a></li>
-            <li> <a href="https://spider-man.fandom.com/es/wiki/Categor%C3%ADa:Personajes">Personajes</a></li>
-            <li> <a href="https://spider-man.fandom.com/es/wiki/Categor%C3%ADa:C%C3%B3mics">Comics</a></li>
-            <li> <a href="https://spider-man.fandom.com/es/wiki/Categor%C3%ADa:Entretenimiento">Apariciones</a></li>
-            <li> <a href="https://spider-man.fandom.com/es/f">Comunidad</a></li>
-        </ul>
-     </nav>
+    :root {
+      --color-fondo: #1a0f1f;
+      --color-primario: #b14ebf;       /* morado circo */
+      --color-secundario: #f5c542;      /* amarillo detalles */
+      --color-texto: #f2e9ff;
+      --color-piel: #d9b48f;
+      --color-morado-oscuro: #30153b;
+      --sombra-suave: 0 8px 20px rgba(0, 0, 0, 0.6);
+      --fuente-titulos: 'Segoe UI', 'Poppins', system-ui, sans-serif;
+    }
+
+    body {
+      background-color: var(--color-fondo);
+      background-image: radial-gradient(circle at 30% 10%, #2f1a38 0%, #0d0710 95%);
+      color: var(--color-texto);
+      font-family: 'Inter', 'Roboto', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contenedor {
+      max-width: 1100px;
+      width: 90%;
+      margin: 2rem auto;
+    }
+
+    /* ========== HEADER con nombre de ella ========== */
+    .header-circo {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .header-circo h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      font-family: var(--fuente-titulos);
+      background: linear-gradient(145deg, #f5d742, #c67ce0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 20px #b14ebf99, 0 4px 10px #00000070;
+      letter-spacing: 3px;
+      margin-bottom: 0.2rem;
+      text-transform: uppercase;
+    }
+
+    .header-circo .dedicatoria {
+      font-size: 1.8rem;
+      background: var(--color-morado-oscuro);
+      display: inline-block;
+      padding: 0.5rem 2.5rem;
+      border-radius: 60px;
+      border: 3px solid var(--color-secundario);
+      box-shadow: 0 0 15px #f5c54266;
+      backdrop-filter: blur(4px);
+      font-style: italic;
+      color: #ffd966;
+    }
+
+    .header-circo .dedicatoria i {
+      margin: 0 0.6rem;
+      color: #ff69b4;
+    }
+
+    /* ========== SECCIÓN 1: PRESENTACIÓN con imagen de JAX ========== */
+    .presentacion {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(12px);
+      border: 1px solid #a64ac9;
+      border-radius: 60px 60px 40px 40px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--sombra-suave), 0 0 30px #b14ebf33;
+      align-items: center;
+    }
+
+    .imagen-jax {
+      flex: 1 1 280px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .imagen-jax img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 40px 20px 40px 20px;
+      border: 4px solid var(--color-secundario);
+      box-shadow: 0 0 30px #c67ce0;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+
+    .imagen-jax img:hover {
+      transform: scale(1.02) rotate(1deg);
+    }
+
+    .info-jax {
+      flex: 2 1 300px;
+    }
+
+    .info-jax h2 {
+      font-size: 2.5rem;
+      color: var(--color-secundario);
+      border-left: 8px solid var(--color-primario);
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .info-jax p {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 5px black;
+    }
+
+    .info-jax .resaltado {
+      color: #f5c542;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    /* ========== SECCIÓN 2: MENSAJE + IMAGEN IZQUIERDA (amor) ========== */
+    .seccion-amor {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      background: #25172c;
+      border-radius: 70px 20px 70px 20px;
+      padding: 2.5rem 2rem;
+      margin: 3rem 0;
+      border: 2px solid #f5c542;
+      box-shadow: 0 0 40px #b14ebf66;
+      align-items: center;
+    }
+
+    .imagen-amor {
+      flex: 1 1 250px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .imagen-amor img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 50% 20% 50% 20%;
+      border: 5px solid #ffb3c6;
+      box-shadow: 0 20px 25px -10px black;
+      transition: 0.3s;
+    }
+
+    .imagen-amor img:hover {
+      transform: scale(1.02);
+      border-color: var(--color-secundario);
+    }
+
+    .mensaje-amor {
+      flex: 2 1 300px;
+      font-size: 1.7rem;
+      background: #2a1833b3;
+      padding: 2rem;
+      border-radius: 60px 20px 60px 20px;
+      border: 2px dashed #f5c542;
+    }
+
+    .mensaje-amor p {
+      margin-bottom: 1rem;
+    }
+
+    .mensaje-amor i {
+      color: #ff99cc;
+      margin-right: 10px;
+    }
+
+    .mensaje-amor .nombre-destacado {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #ffb6e7;
+      text-shadow: 0 0 10px magenta;
+    }
+
+    /* ========== SECCIÓN 3: TE AMO + IMAGEN CENTRADA ========== */
+    .seccion-teamo {
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .teamo-texto {
+      font-size: 5rem;
+      font-weight: 900;
+      color: #f5cac3;
+      text-shadow: 0 0 25px #ff69b4, 0 0 45px #b14ebf;
+      letter-spacing: 6px;
+      margin-bottom: 2rem;
+      word-break: break-word;
+    }
+
+    .teamo-texto i {
+      color: #ff4d6d;
+      font-size: 4rem;
+      margin: 0 0.8rem;
+    }
+
+    .imagen-teamo img {
+      max-width: 100%;
+      width: 500px;
+      border-radius: 90px 20px 90px 20px;
+      border: 6px solid #f5c542;
+      box-shadow: 0 0 60px #b14ebf;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* ========== SECCIÓN 4: NO SOY EL MEJOR, PERO LO INTENTARÉ ========== */
+    .seccion-mejorar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: #1d1025;
+      border-radius: 40px 80px 40px 80px;
+      padding: 2.5rem 2rem;
+      margin: 3.5rem 0;
+      border: 3px solid #ac5fc0;
+      align-items: center;
+    }
+
+    .mensaje-mejorar {
+      flex: 2 1 280px;
+      font-size: 1.8rem;
+      padding: 1.5rem;
+      background: #2e1b37;
+      border-radius: 40px 10px 40px 10px;
+      border-left: 12px solid #f5c542;
+    }
+
+    .mensaje-mejorar p:first-child {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .mensaje-mejorar .firma {
+      font-size: 1.4rem;
+      color: #e09dff;
+      margin-top: 1rem;
+    }
+
+    .imagen-mejorar {
+      flex: 1 1 240px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .imagen-mejorar img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 40px 40px 10px 40px;
+      border: 5px solid #f5c542;
+      box-shadow: -20px 20px 0px #a14ebf;
+    }
+
+    /* ========== SECCIÓN 5: IMAGEN FINAL (cierre) ========== */
+    .seccion-final {
+      margin: 4rem 0 3rem;
+      text-align: center;
+    }
+
+    .imagen-final img {
+      max-width: 100%;
+      width: 600px;
+      border-radius: 100px 20px 100px 20px;
+      border: 6px solid #f5c542;
+      box-shadow: 0 0 60px #ffb3c6;
+      transition: 0.3s;
+    }
+
+    .imagen-final img:hover {
+      box-shadow: 0 0 80px #ff69b4;
+    }
+
+    .texto-final {
+      margin-top: 2rem;
+      font-size: 2rem;
+      color: #f5c542;
+      background: #1f0f29b3;
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      border-radius: 60px;
+      border: 2px solid white;
+    }
+
+    /* ========== FOOTER (con corazoncito) ========== */
+    .footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: #bba7cf;
+      border-top: 2px dashed #a969c9;
+      padding-top: 2rem;
+      font-size: 1.2rem;
+    }
+
+    .footer i {
+      color: #ff99cc;
+    }
+
+    /* ========== AJUSTES RESPONSIVOS ========== */
+    @media (max-width: 700px) {
+      .header-circo h1 {
+        font-size: 2.8rem;
+      }
+      .header-circo .dedicatoria {
+        font-size: 1.3rem;
+      }
+      .teamo-texto {
+        font-size: 3.2rem;
+      }
+      .teamo-texto i {
+        font-size: 2.5rem;
+      }
+      .mensaje-amor {
+        font-size: 1.4rem;
+      }
+      .mensaje-mejorar {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+
+    <!-- HEADER: DEDICADO A MARILU / MARI -->
+    <header class="header-circo">
+      <h1>⋆⍟⋆ JAX ⋆⍟⋆</h1>
+      <div class="dedicatoria">
+        <i class="fas fa-heart"></i> para mi Marilu <i class="fas fa-heart"></i>
+      </div>
+      <p style="margin-top: 0.8rem; color: #d3afe6; font-size: 1.3rem;">(porque JAX es tu personaje fav de la vida 💜)</p>
     </header>
 
+    <!-- SECCIÓN 1: PRESENTACIÓN con la imagen de JAX (primera URL) -->
+    <section class="presentacion">
+      <div class="imagen-jax">
+        <!-- IMAGEN 1 (presentación) -->
+        <img src="https://i.pinimg.com/736x/27/81/39/2781397c2f6a97f86888a10e76818beb.jpg" alt="Jax - personaje favorito de Marilu" loading="lazy">
+      </div>
+      <div class="info-jax">
+        <h2>💜 ¡Hola, Marilu! 💜</h2>
+        <p>Este rincón del circo digital es <span class="resaltado">totalmente para ti</span>. Jax, el conejo morado travieso, te representa tanto que no podía faltar una página dedicada a tu amor por él.</p>
+        <p><i class="fas fa-star" style="color: gold;"></i> <strong>Tu personaje fav de la vida</strong> — y ahora con un mensaje especial envuelto en purple y magia.</p>
+      </div>
+    </section>
 
-    
-    <aside class="BarraLateral">
+    <!-- SECCIÓN 2: MENSAJE DE AMOR (imagen izquierda + texto) -->
+    <section class="seccion-amor">
+      <div class="imagen-amor">
+        <!-- IMAGEN 2 (amor, izquierda) -->
+        <img src="https://i.pinimg.com/736x/8d/41/28/8d41287ea4e8c38f15990a2cbd1326ed.jpg" alt="Jax amor y cariño" loading="lazy">
+      </div>
+      <div class="mensaje-amor">
+        <p><i class="fas fa-heart-circle-plus"></i> <span class="nombre-destacado">Marilu</span>,</p>
+        <p>Eres tan única como este conejo morado. Porque así como Jax ilumina la pantalla, tú iluminas mis días con tu forma de ser. </p>
+        <p><i class="fas fa-crown"></i> Gracias por existir, por querer a Jax y por compartir tu locura favorita conmigo. Te adoro.</p>
+      </div>
+    </section>
 
-        <div class="bl-tt">
-            <img src="Imagenes/New Logo.jpg"  class="LogoTitulo">
-            <h1>Spiderman</h1>
-            <p>Si buscas saber más</p>
-        </div>
+    <!-- SECCIÓN 3: TE AMO + IMAGEN (tercera URL) -->
+    <section class="seccion-teamo">
+      <div class="teamo-texto">
+        <i class="fas fa-heart"></i> TE AMO <i class="fas fa-heart"></i>
+      </div>
+      <div class="imagen-teamo">
+        <!-- IMAGEN 3 (te amo) -->
+        <img src="https://i.pinimg.com/736x/78/e7/93/78e79351e2393175d92d721a92385643.jpg" alt="Jax te amo" loading="lazy">
+      </div>
+      <p style="margin-top: 1.2rem; font-size: 1.5rem; color: #fad974;">💕 infinito, como tu sonrisa cuando ves a Jax 💕</p>
+    </section>
 
-        <div class="bl-t">
+    <!-- SECCIÓN 4: NO SOY EL MEJOR, PERO LO INTENTARÉ (imagen + mensaje) -->
+    <section class="seccion-mejorar">
+      <div class="mensaje-mejorar">
+        <p>🧡 <em>“No soy el mejor, pero por ti intentaré serlo cada día”</em> 🧡</p>
+        <p>Así como Jax a veces parece un desastre pero siempre está ahí, yo quiero estar para ti en todo. Me esfuerzo por darte lo mejor, Marilu.</p>
+        <div class="firma">— con todo mi cariño, tu persona que te ama 💌</div>
+      </div>
+      <div class="imagen-mejorar">
+        <!-- IMAGEN 4 (jax no soy el mejor) -->
+        <img src="https://i.pinimg.com/736x/c3/40/ec/c340ecb400f2072637b4eb349fff5d67.jpg" alt="Jax - no soy el mejor pero lo intento" loading="lazy">
+      </div>
+    </section>
 
-            <div class="Tema">
-                <a href="https://unamglobal.unam.mx/global_revista/spiderman-el-heroe-con-el-que-nos-identificamos/"><img src="https://i.pinimg.com/736x/1a/b5/e3/1ab5e3bd6bba120418f17a2672d19ed1.jpg" alt="personajes"></a>
-                <h4>Principios del personaje</h4>
-                <p>Febrero, 2020</p>
-            </div>
+    <!-- SECCIÓN 5: IMAGEN FINAL (quinta URL) -->
+    <section class="seccion-final">
+      <div class="imagen-final">
+        <!-- IMAGEN 5 (final) -->
+        <img src="https://i.pinimg.com/736x/69/c7/19/69c719fd20c192244e2b431ab4c2b83f.jpg" alt="Jax final dedicado a Marilu" loading="lazy">
+      </div>
+      <div class="texto-final">
+        <i class="fas fa-heart" style="color: #f08080;"></i> siempre juntos, como Jax y su circo <i class="fas fa-heart" style="color: #f08080;"></i>
+      </div>
+    </section>
 
-            <div class="Tema">
-               <a href="https://spiderman-1nv6.fandom.com/es/wiki/Principales_adaptaciones_en_medios_audiovisuales"><img src="https://i.pinimg.com/1200x/30/69/99/306999b522902372aafde931ff6376b2.jpg" alt="juegos"></a> 
-                <h4>Adaptaciones</h4>
-                <p>Marzo, 2021</p>
-            </div>
-
-            <div class="Tema">
-                <a href="https://mx.pinterest.com/jesuscastillo282002/spiderman-fanart/"><img src="https://i.pinimg.com/736x/39/a3/c5/39a3c573c9a86cdebc169ac4b731c0e9.jpg" alt="fanart"></a>
-                <h4>Fan arts</h4>
-                <p>Septiembre, 2023</p>
-            </div>
-
-            <div class="Tema">
-               <a href="https://fictionalcrossover.fandom.com/wiki/Spider-Man"><img src="https://i.pinimg.com/736x/b6/88/b5/b688b51feaaa8d4447fd46bda8b2e002.jpg" alt="crossover"></a>
-                <h4>Crossover</h4>
-                <p>Noviembre, 2024</p>
-            </div>
-
-            <div class="Tema">
-                <a href=""></a><img src="https://i.pinimg.com/736x/44/31/88/443188ac183e2b1be3d1ac0e5d4f58e6.jpg" alt="Comunidad"> 
-                <h4>Comunidad</h4>
-                <p>Noviembre, 2025</p>
-            </div>
-            <div class="Tema">
-                <img src="quiz.jpg" alt="Quiz">
-                <h4>Quiz sobre spiderman</h4>
-                <div> 
-                    <p>¿Cuantos villanos conforman a los X Siniestros?</p>
-            <input type="number" id="villanos">
-            <button onclick="Verificar()">verificar</button>
-            <p id="texto"></p>
-        </div>
-
-            </div>
-            
-
-        </div>
-
-    </aside>
-
-    <main class="Contenido">
-
-        <Article class="Articulo">
-            <div class="Fila">
-                <div class="Titulo">
-                    <H2> Bienvenidos</H2>
-                    <h4>Introducicon a esta comunidad, quienes somos?</h4>
-                </div>
-                <div class="DatosDeNoticia">
-                    <h4>Febrero 08, 2020</h4>
-                    <img src="Imagenes/New Logo.jpg"  class="LogoDato">
-                    <h4>Jomalu</h4>
-                </div>
-            </div>
-            <div class="Nota">              
-                <img src="https://i.pinimg.com/1200x/38/28/ed/3828ed3dd8a768d56ff65dd1256166a5.jpg">              
-                <p>
-                    Bienvenidos a Spiderfans, la comunidad definitiva para todos los amantes de Spiderman. Aquí, celebramos todo lo relacionado con el icónico superhéroe arácnido, desde sus orígenes en los cómics hasta sus múltiples adaptaciones en cine, televisión y videojuegos. Nuestra misión es crear un espacio donde los fans puedan compartir su pasión, discutir teorías, explorar el vasto universo de Spiderman y conectarse con otros entusiastas de todas las edades. Ya seas un seguidor de larga data o un nuevo admirador, en Spiderfans encontrarás un lugar para celebrar al héroe que nos recuerda que con un gran poder viene una gran responsabilidad. 
-                </p>
-            </div>
-            <div class="PieDeSeccion">
-                <button class="leermas">Leer mas</button>            
-                <span><button class="like" onclick="alternar()">Like</button> <img id="img1" src="Imagenes/unlike.png" alt=""> </span>
-        </Article>
-
-        <Article class="Articulo">
-            <div class="Fila">
-                <div class="Titulo">
-                    <H2> HISTORIA DE SPIDERMAN</H2>
-                    <h4>Un vistazo sobre el origen, uso y la evolución del personaje desde su primera aparicion.</h4>
-                </div>
-                <div class="DatosDeNoticia">
-                    <h4>Abril 15, 2023</h4>
-                    <img src="Imagenes/New Logo.jpg"  class="LogoDato">
-                    <h4>Jomalu</h4>
-                </div>
-            </div>
-            <div class="Nota">              
-                <img src="https://i.pinimg.com/736x/0c/b3/7f/0cb37f9503693273360af4963611ee58.jpg">              
-                <p>
-                   Aunque querer abarcar todo lo que ha sido el personaje puede ser dificil, podemos decir que Spiderman fue creado por el escritor Stan Lee y el artista Steve Ditko, haciendo su primera aparición en "Amazing Fantasy" #15 en 1962. La historia de Spiderman gira en torno a Peter Parker, un adolescente huérfano que vive con sus tíos Ben y May en Nueva York. Peter es un estudiante brillante pero socialmente torpe, que lucha por equilibrar su vida escolar, sus responsabilidades familiares y su trabajo como fotógrafo freelance para el Daily Bugle. Un día, durante una visita a una exhibición científica, Peter es mordido por una araña radiactiva, lo que le otorga habilidades sobrehumanas similares a las de una araña, incluyendo fuerza, agilidad y la capacidad de adherirse a las superficies...
-            </div>
-            <div class="PieDeSeccion">
-                <button class="leermas">Leer mas</button>             
-                <span> <button class="like" onclick="alternar2()">Like</button><img id="img2" src="Imagenes/unlike.png"> </span>
-        </Article>
-
-        <Article class="Articulo">
-            <div class="Fila">
-                <div class="Titulo">
-                    <H2> Por que me gusta spiderman?</H2>
-                    <h4>Opinion personal sobre este personaje.</h4>
-                </div>
-                <div class="DatosDeNoticia">
-                    <h4>Noviembre 10, 2025</h4>
-                    <img src="Imagenes/New Logo.jpg"  class="LogoDato">
-                    <h4>Jomalu</h4>
-                </div>
-            </div>
-            <div class="Nota">              
-                <img src="https://i.pinimg.com/1200x/2f/ae/6a/2fae6ab24c8a2d7587db30730f900c57.jpg">              
-                <p>
-                    Como saben esta pagina empezo como una practica de compartir el personaje, llegar a más gente, pero realmente como empece a gustarme Spiderman? Recuerdo que de niño veia los dibujos animados de Spiderman en la television, y me fascinaba ver sus aventuras y como usaba sus poderes para ayudar a los demás. A medida que fui creciendo, comencé a leer los cómics y a ver las películas, lo que me permitió profundizar en su historia y entender mejor su carácter. Lo que más me gusta de Spiderman es su humanidad; a pesar de tener poderes extraordinarios, sigue siendo un adolescente con problemas cotidianos, lo que lo hace muy relatable. Además, su sentido del humor y su ingenio lo convierten en un personaje muy entretenido de seguuir, por lo que en este articulo estare hablando como mi experiencia con sus comics, juegos, peliculas series y demas...
-            </div>
-            <div class="PieDeSeccion">
-                <button class="leermas">Leer mas</button>            
-                <span> <button class="like" onclick="alternar3()">Like</button><img id="img3" src="Imagenes/unlike.png" alt=""> 
-                </span>
-
-        </Article>
-    </main>
-
-    <footer>
-        <div class="pie-pagina" id="pie-pagina">
-  <div class="imagenes-redes-sociales"> 
-    <a href="https://www.facebook.com/8.JJ.GT"></a><img src="https://imgs.search.brave.com/eQ7_VyYAdWs08qgZP6FMffZl5TfKLQprX3aRJwLHsWA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzkxLzAzNi1mYWNl/Ym9vay5wbmc" alt="Facebook"></a>
-   <a href="https://www.instagram.com/jomalu_g/"></a><img src="https://imgs.search.brave.com/E9Kg1YLnv1vrDei71Zz5jxdAAQAwk1RBYm2TAbV71OA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d29ybGR2ZWN0b3Js/b2dvLmNvbS9sb2dv/cy9pbnN0YWdyYW0t/MjAxNi01LnN2Zw" alt="instagram"></a>
-  <a href="https://api.whatsapp.com/send?phone=526312011661"> <img src="https://imgs.search.brave.com/mm-hPdGqieeJmtzX92vizsQekbTeHtmB7735QC3RLjY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi82LzZiL1do/YXRzQXBwLnN2Zy8y/NTBweC1XaGF0c0Fw/cC5zdmcucG5n" alt="whatsapp"></a>
-<img src="https://imgs.search.brave.com/pApLlG_TGZf5FqspOcqkgxPsx2hk9NeokZxMb_bXv14/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL2ltYWdlcy81/ODQ3ZmFmZGNlZjEw/MTRjMGI1ZTQ4Y2Uu/cG5n" alt="gmalis">    
-</div>
-                <p>
-                &copy;Marvel, Todos los dereches reservados. 
-            </p>
-            <p>Spiderfans@gmail.com | Un gran poder lleva gran responsabilidad...</p>
-        </div>     
+    <!-- FOOTER con un detalle para ella -->
+    <footer class="footer">
+      <p>Hecho con <i class="fas fa-heart"></i> para <strong>Marilu (Mari)</strong> — porque Jax ya es parte de ti.</p>
+      <p style="font-size: 1rem; margin-top: 0.8rem;">✨ Tú, yo y el conejo morado contra el mundo ✨</p>
     </footer>
-                <script>
-                              function Verificar() {
-            let villanos = parseInt(document.getElementById("villanos").value);
-            let untexto= "";
-            if(villanos == 6){
-            untexto= "Correcto, eres todo un fanatico"; 
-           }
-           else{
-           untexto= "Intenta de nuevo no es tan dificil";
-          }
-   
-        document.getElementById("texto").innerHTML = untexto;
-         }
 
-                        float=1;
-    function alternar(){
-        if (float == 1){
-            document.getElementById("img1").src="Imagenes/like.png";
-            float = 0;
-            
-        } else {
-            document.getElementById("img1").src="Imagenes/unlike.png";
-            float = 1;
-        }
-    } 
-                </script>
-
+  </div>
+  <!-- Si subes las imágenes a GitHub, reemplaza las URLs con las rutas de tu repositorio, por ejemplo:
+    <img src="https://tuusuario.github.io/tu-repositorio/imagenes/2781397c2f6a97f86888a10e76818beb.jpg">
+    pero manteniendo la estructura de carpetas que uses.
+  -->
 </body>
+</html>
