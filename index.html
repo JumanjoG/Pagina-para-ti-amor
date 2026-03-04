@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jax 💜 Marilu · El conejo de mi circo</title>
-
+  <title>Jax 💜 Marilu · Un mensaje muy especial</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    /* mis RESET Y VARIABLES, documentacion 2.0 */
     * {
       margin: 0;
       padding: 0;
@@ -15,10 +15,9 @@
 
     :root {
       --color-fondo: #1a0f1f;
-      --color-primario: #b14ebf;       
-      --color-secundario: #f5c542;      
+      --color-primario: #b14ebf;
+      --color-secundario: #f5c542;
       --color-texto: #f2e9ff;
-      --color-piel: #d9b48f;
       --color-morado-oscuro: #30153b;
       --sombra-suave: 0 8px 20px rgba(0, 0, 0, 0.6);
       --fuente-titulos: 'Segoe UI', 'Poppins', system-ui, sans-serif;
@@ -34,6 +33,16 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: background-image 1s ease-in-out;
+    }
+
+    /* Fondo dinámico para la página de la propuesta */
+    body.proposal-bg {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      transition: background-image 2s ease-in-out;
     }
 
     .contenedor {
@@ -42,7 +51,12 @@
       margin: 2rem auto;
     }
 
+    
+    .hidden {
+      display: none !important;
+    }
 
+    /*  ESTILOS GENERALES */
     .header-circo {
       text-align: center;
       margin-bottom: 3rem;
@@ -81,7 +95,6 @@
       color: #ff69b4;
     }
 
- 
     .presentacion {
       display: flex;
       flex-wrap: wrap;
@@ -110,10 +123,6 @@
       box-shadow: 0 0 30px #c67ce0;
       transition: transform 0.3s ease;
       object-fit: cover;
-    }
-
-    .imagen-jax img:hover {
-      transform: scale(1.02) rotate(1deg);
     }
 
     .info-jax {
@@ -169,11 +178,6 @@
       transition: 0.3s;
     }
 
-    .imagen-amor img:hover {
-      transform: scale(1.02);
-      border-color: var(--color-secundario);
-    }
-
     .mensaje-amor {
       flex: 2 1 300px;
       font-size: 1.7rem;
@@ -183,22 +187,12 @@
       border: 2px dashed #f5c542;
     }
 
-    .mensaje-amor p {
-      margin-bottom: 1rem;
-    }
-
-    .mensaje-amor i {
-      color: #ff99cc;
-      margin-right: 10px;
-    }
-
     .mensaje-amor .nombre-destacado {
       font-size: 2.2rem;
       font-weight: bold;
       color: #ffb6e7;
       text-shadow: 0 0 10px magenta;
     }
-
 
     .seccion-teamo {
       text-align: center;
@@ -212,13 +206,6 @@
       text-shadow: 0 0 25px #ff69b4, 0 0 45px #b14ebf;
       letter-spacing: 6px;
       margin-bottom: 2rem;
-      word-break: break-word;
-    }
-
-    .teamo-texto i {
-      color: #ff4d6d;
-      font-size: 4rem;
-      margin: 0 0.8rem;
     }
 
     .imagen-teamo img {
@@ -230,7 +217,6 @@
       margin: 0 auto;
       display: block;
     }
-
 
     .seccion-mejorar {
       display: flex;
@@ -253,21 +239,10 @@
       border-left: 12px solid #f5c542;
     }
 
-    .mensaje-mejorar p:first-child {
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
     .mensaje-mejorar .firma {
       font-size: 1.4rem;
       color: #e09dff;
       margin-top: 1rem;
-    }
-
-    .imagen-mejorar {
-      flex: 1 1 240px;
-      display: flex;
-      justify-content: center;
     }
 
     .imagen-mejorar img {
@@ -289,11 +264,6 @@
       border-radius: 100px 20px 100px 20px;
       border: 6px solid #f5c542;
       box-shadow: 0 0 60px #ffb3c6;
-      transition: 0.3s;
-    }
-
-    .imagen-final img:hover {
-      box-shadow: 0 0 80px #ff69b4;
     }
 
     .texto-final {
@@ -316,37 +286,158 @@
       font-size: 1.2rem;
     }
 
-    .footer i {
-      color: #ff99cc;
+    /* ESTILOS PARA EL EASTER EGG  */
+    .easter-egg-container {
+      text-align: center;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: rgba(0,0,0,0.2);
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      max-width: 300px;
     }
 
+    .easter-egg-container p {
+      font-size: 1.2rem;
+      color: #f5c542;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+
+    .easter-egg-img {
+      width: 150px;
+      height: auto;
+      border-radius: 20px;
+      border: 3px solid #ff69b4;
+      box-shadow: 0 0 20px #f5c542;
+      transition: transform 0.3s;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .easter-egg-img:hover {
+      transform: scale(1.05);
+    }
+
+    .easter-text {
+      margin-top: 0.8rem;
+      font-size: 1.1rem;
+      color: #ffb6e7;
+      min-height: 2rem;
+    }
+
+    /*  ESTILOS PARA LA PÁGINA DE PROPUESTA las habia perdido */
+    .proposal-page {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(26, 15, 31, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 50px;
+      border: 3px solid #f5c542;
+      margin: 2rem auto;
+      max-width: 800px;
+    }
+
+    .proposal-page h2 {
+      font-size: 3rem;
+      color: #ffd966;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 20px #ff69b4;
+    }
+
+    .proposal-page img {
+      max-width: 100%;
+      width: 500px;
+      border-radius: 30px;
+      border: 5px solid white;
+      margin: 2rem 0;
+      box-shadow: 0 0 50px #ffb3c6;
+    }
+
+    .proposal-page p {
+      font-size: 2rem;
+      margin: 2rem 0;
+      color: #f5cac3;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .proposal-btn {
+      font-size: 2rem;
+      padding: 1rem 3rem;
+      border: none;
+      border-radius: 60px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+      box-shadow: 0 0 30px #b14ebf;
+    }
+
+    .btn-si {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .btn-si:hover {
+      background: #45a049;
+      transform: scale(1.1);
+      box-shadow: 0 0 50px #4CAF50;
+    }
+
+    .btn-no {
+      background: #f44336;
+      color: white;
+    }
+
+    .btn-no:hover {
+      background: #da190b;
+      transform: scale(1.1);
+      box-shadow: 0 0 50px #f44336;
+    }
+
+    .respuesta-mensaje {
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      color: #ffb6e7;
+    }
+
+    .whatsapp-link {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .whatsapp-link:hover {
+      background: #128C7E;
+    }
+
+  
     @media (max-width: 700px) {
-      .header-circo h1 {
-        font-size: 2.8rem;
-      }
-      .header-circo .dedicatoria {
-        font-size: 1.3rem;
-      }
-      .teamo-texto {
-        font-size: 3.2rem;
-      }
-      .teamo-texto i {
-        font-size: 2.5rem;
-      }
-      .mensaje-amor {
-        font-size: 1.4rem;
-      }
-      .mensaje-mejorar {
-        font-size: 1.5rem;
-      }
+      .header-circo h1 { font-size: 2.8rem; }
+      .teamo-texto { font-size: 3.2rem; }
+      .teamo-texto i { font-size: 2.5rem; }
+      .proposal-page h2 { font-size: 2rem; }
+      .proposal-btn { font-size: 1.5rem; padding: 0.8rem 2rem; }
     }
   </style>
 </head>
 <body>
-  <div class="contenedor">
-
+  
+  <div id="pagina-principal" class="contenedor">
     <header class="header-circo">
-      <h1> JAX </h1>
+      <h1>JAX</h1>
       <div class="dedicatoria">
         <i class="fas fa-heart"></i> para mi Marilu, mi amorcito corazon<i class="fas fa-heart"></i>
       </div>
@@ -355,23 +446,41 @@
 
     <section class="presentacion">
       <div class="imagen-jax">
-        <img src="https://i.pinimg.com/736x/27/81/39/2781397c2f6a97f86888a10e76818beb.jpg" alt="Jax - personaje favorito de Marilu" loading="lazy">
+        <img src="https://i.pinimg.com/736x/27/81/39/2781397c2f6a97f86888a10e76818beb.jpg" alt="Jax" loading="lazy">
       </div>
       <div class="info-jax">
-        <h2> ¡Hola, Amor! </h2>
-        <p>Este rincón del circo digital es <span class="resaltado">totalmente para ti</span>. Jax, el conejo morado travieso, te gusta tanto que no se me ocurrio nada mejor una página dedicada a tu amor por él.</p>
-        <p><i class="fas fa-star" style="color: gold;"></i> <strong>Tu personaje fav de la vida</strong> — y ahora con un mensaje especial envuelto en programacion y magia, sin mencionar la locura.</p>
-        <p>Aqui planeo subirte mas cosas, el collage, y asi, ademas actualizaion de TADC, aunque ya este por acabar<p>
+        <h2>¡Hola, Amor!</h2>
+        <p>Este rincón del circo digital es <span class="resaltado">totalmente para ti</span>. Jax, el conejo morado travieso, te gusta tanto que no se me ocurrió nada mejor que una página dedicada a tu amor por él.</p>
+        <p><i class="fas fa-star" style="color: gold;"></i> <strong>Tu personaje fav de la vida</strong> — y ahora con un mensaje especial envuelto en programación y magia, sin mencionar la locura.</p>
+        <p>Aqui planeo subirte mas cosas, el collage, y asi, ademas actualizacion de TADC, aunque ya este por acabar</p>
       </div>
     </section>
 
+    <div class="easter-egg-container" id="easter-egg-inicial">
+      <p>✨ Esto definitivamente no es un easter egg ✨</p>
+      <img src="https://i.pinimg.com/736x/94/7c/16/947c166bff4c3478af9e3ef2d76db233.jpg" alt="Easter egg inicial" class="easter-egg-img" id="egg-img-1">
+      <div class="easter-text" id="egg-text-1"></div>
+    </div>
+
+
+    <div class="easter-egg-container hidden" id="easter-egg-segundo">
+      <img src="https://i.pinimg.com/736x/12/df/b4/12dfb4160a51408a569daddfba65e977.jpg" alt="Segundo easter egg" class="easter-egg-img" id="egg-img-2">
+      <div class="easter-text" id="egg-text-2">¿ahora esta tambien es un easter egg?</div>
+    </div>
+
+    <div class="easter-egg-container hidden" id="easter-egg-tercero">
+      <img src="https://i.pinimg.com/736x/b1/6e/71/b16e7199fc4f1b16423d3f40c742f90a.jpg" alt="Tercer easter egg" class="easter-egg-img" id="egg-img-3">
+      <div class="easter-text" id="egg-text-3">Dale click a esta tambien porfis</div>
+    </div>
+
+    
     <section class="seccion-amor">
       <div class="imagen-amor">
-        <img src="https://i.pinimg.com/736x/8d/41/28/8d41287ea4e8c38f15990a2cbd1326ed.jpg" alt="Jax amor y cariño" loading="lazy">
+        <img src="https://i.pinimg.com/736x/8d/41/28/8d41287ea4e8c38f15990a2cbd1326ed.jpg" alt="Jax amor" loading="lazy">
       </div>
       <div class="mensaje-amor">
         <p><i class="fas fa-heart-circle-plus"></i> <span class="nombre-destacado">Marilu</span>,</p>
-        <p>Eres tan única como este conejo morado. Porque así como Jax ilumina la pantalla, tú iluminas mis días con tu forma de ser y tu compañia. </p>
+        <p>Eres tan única como este conejo morado. Porque así como Jax ilumina la pantalla, tú iluminas mis días con tu forma de ser y tu compañía.</p>
         <p><i class="fas fa-crown"></i> Gracias por existir, por querer a Jax y por compartir tu locura favorita conmigo, posdata te adoro.</p>
       </div>
     </section>
@@ -388,30 +497,174 @@
 
     <section class="seccion-mejorar">
       <div class="mensaje-mejorar">
-        <p><em>“No soy el mejor, pero por ti intentaré serlo cada día”</em> </p>
+        <p><em>“No soy el mejor, pero por ti intentaré serlo cada día”</em></p>
         <p>Así como Jax a veces parece un desastre pero siempre está ahí, yo quiero estar para ti en todo. Me esfuerzo por darte lo mejor, Marilu.</p>
-        <div class="firma">— con todo mi cariño, la persona que te ama Joma </div>
+        <div class="firma">— con todo mi cariño, la persona que te ama Joma</div>
       </div>
       <div class="imagen-mejorar">
-        <img src="https://i.pinimg.com/736x/c3/40/ec/c340ecb400f2072637b4eb349fff5d67.jpg" alt="Jax - no soy el mejor pero lo intento" loading="lazy">
+        <img src="https://i.pinimg.com/736x/c3/40/ec/c340ecb400f2072637b4eb349fff5d67.jpg" alt="Jax - no soy el mejor" loading="lazy">
       </div>
     </section>
 
     <section class="seccion-final">
       <div class="imagen-final">
-        <img src="https://i.pinimg.com/736x/69/c7/19/69c719fd20c192244e2b431ab4c2b83f.jpg" alt="Jax final dedicado a Marilu" loading="lazy">
+        <img src="https://i.pinimg.com/736x/69/c7/19/69c719fd20c192244e2b431ab4c2b83f.jpg" alt="Jax final" loading="lazy">
       </div>
       <div class="texto-final">
-         siempre juntos, como Jax y su circo 
+        siempre juntos, como Jax y su circo
       </div>
     </section>
 
     <footer class="footer">
       <p>Hecho con amor para <strong>Marilu (Mari)</strong> — porque Jax ya es parte de ti.</p>
-      <p style="font-size: 1rem; margin-top: 0.8rem;"> Tú, yo, Oliver y el conejo morado contra el mundo </p>
+      <p style="font-size: 1rem; margin-top: 0.8rem;">Tú, yo, Oliver y el conejo morado contra el mundo</p>
     </footer>
-
   </div>
- No se si cuente como demasiado cursi, espero que no
+
+  <div id="pagina-propuesta" class="contenedor hidden">
+    <div class="proposal-page" id="proposal-page">
+      <h2>💜 Para Marilu 💜</h2>
+      <img src="https://i.pinimg.com/1200x/4f/5e/72/4f5e725f77a36507446252ba24f05ca3.jpg" alt="Ramo de rosas blancas" id="rosas-img">
+      <p>Entonces, ¿puedo ser tu novio?<br>Te quiero y espero que esto te guste.</p>
+      
+      <div class="button-container">
+        <button class="proposal-btn btn-si" id="btn-si">SÍ</button>
+        <button class="proposal-btn btn-no" id="btn-no">NO</button>
+      </div>
+
+     
+      <div id="respuesta-container"></div>
+    </div>
+  </div>
+
+
+  <div id="whatsapp-container" style="display: none; text-align: center; margin: 2rem auto;">
+    <a href="https://wa.me/521234567890?text=¡Acepto%20ser%20tu%20novia!%20❤️" class="whatsapp-link" target="_blank" id="whatsapp-link">
+      <i class="fab fa-whatsapp"></i> Mándame captura por WhatsApp, si quieres
+    </a>
+    <p style="margin-top: 2rem; font-size: 2rem; color: #f5c542;">¡GRACIAS! ¡TE AMO! ❤️</p>
+    <img src="https://i.pinimg.com/736x/bf/44/63/bf446383e6d16ea0dccb17fa21a2c97f.jpg" alt="Jax feliz" style="max-width: 300px; border-radius: 30px; margin-top: 1rem;">
+  </div>
+
+  <!--  SCRIPTS CON TODA LA LÓGICA vamo carayo -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Elementos de la página principal
+      const paginaPrincipal = document.getElementById('pagina-principal');
+      const paginaPropuesta = document.getElementById('pagina-propuesta');
+      
+      // Elementos del easter egg
+      const eggInicial = document.getElementById('easter-egg-inicial');
+      const eggSegundo = document.getElementById('easter-egg-segundo');
+      const eggTercero = document.getElementById('easter-egg-tercero');
+      const eggImg1 = document.getElementById('egg-img-1');
+      const eggImg2 = document.getElementById('egg-img-2');
+      const eggImg3 = document.getElementById('egg-img-3');
+      const eggText1 = document.getElementById('egg-text-1');
+      const eggText2 = document.getElementById('egg-text-2');
+      const eggText3 = document.getElementById('egg-text-3');
+
+      // Elementos de la propuesta, se complica la vaina
+      const btnSi = document.getElementById('btn-si');
+      const btnNo = document.getElementById('btn-no');
+      const respuestaContainer = document.getElementById('respuesta-container');
+      const proposalPage = document.getElementById('proposal-page');
+      const whatsappContainer = document.getElementById('whatsapp-container');
+      const body = document.body;
+
+      
+      let noCount = 0;
+      const fondosNo = [
+        'url(https://i.pinimg.com/736x/4d/fd/9b/4dfd9b05d590fda19fe5380b740f0220.jpg)',
+        'url(https://i.pinimg.com/736x/12/00/73/12007365c0df059a032c258af933c24b.jpg)',
+        'url(https://i.pinimg.com/1200x/d1/c0/c7/d1c0c7ccaae28cdf557105912ec1e4b8.jpg)',
+        'url(https://i.pinimg.com/736x/c5/a3/d1/c5a3d1a18b7346ad944fe544b053a649.jpg)'
+      ];
+
+
+      let eggStep = 0;
+
+  
+      eggInicial.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (eggStep === 0) {
+          eggStep = 1;
+          eggText1.innerText = '¡Sorpresa! Bueno, era todo?';
+          eggSegundo.classList.remove('hidden');
+        }
+      });
+
+      
+      eggSegundo.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (eggStep === 1) {
+          eggStep = 2;
+          eggText2.innerText = '¡Último paso! Dale click a esta si quieres ver algo especial 💜';
+          eggTercero.classList.remove('hidden');
+        }
+      });
+
+      
+      eggTercero.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (eggStep === 2) {
+          // Ocultar página principal y mostrar página de propuesta
+          paginaPrincipal.classList.add('hidden');
+          paginaPropuesta.classList.remove('hidden');
+          
+          
+          body.classList.add('proposal-bg');
+          body.style.backgroundImage = fondosNo[0];
+          body.style.backgroundSize = 'cover';
+          body.style.backgroundPosition = 'center';
+          
+          
+        }
+      });
+
+      
+      // Función para cambiar fondo en ciclo
+      function cambiarFondoNo() {
+        const randomIndex = Math.floor(Math.random() * fondosNo.length);
+        body.style.backgroundImage = fondosNo[randomIndex];
+      }
+
+      // Respuesta SÍ
+      btnSi.addEventListener('click', function() {
+        // Ocultar todo el contenido de la propuesta menos el WhatsApp
+        proposalPage.classList.add('hidden');
+        whatsappContainer.style.display = 'block';
+        
+        
+        body.style.backgroundImage = fondosNo[0];
+      });
+
+      
+      btnNo.addEventListener('click', function() {
+        noCount++;
+        
+        
+        cambiarFondoNo();
+        
+        if (noCount === 1) {
+          respuestaContainer.innerHTML = '<p class="respuesta-mensaje">¿Por qué no? Bueno quizás no pregunté bien... ¿Puedo ser tu novio?</p>';
+        } else if (noCount === 2) {
+          respuestaContainer.innerHTML = '<p class="respuesta-mensaje">Creo que oliver te movio el mouse a ver intentemos de nuevo... ¿Puedo ser tu novio?</p>';
+        } else if (noCount >= 3) {
+        respuestaContainer.innerHTML = '<p class="respuesta-mensaje">Bueno, sabes que no me rendiré y demostrare que voy en serio (aunque igual puedes darle al SÍ de una vez si quieres, porfis)</p>';
+        }
+      });
+
+      
+      const whatsappLink = document.getElementById('whatsapp-link');
+      whatsappLink.href = 'https://wa.me/526312011661?text=¡Acepto%20ser%20tu%20novia!%20❤️';
+    });
+  </script>
+
+  <!-- Mensaje personal (POR SI ALGUIEN ve el código fuente) -->
+  <!-- 
+     Si eres tu amor: Eres especial, esto es solo el comienzo. 
+     Si eres un curioso cof cof (Irwin): Gracias por leer hasta aquí, espero que hayas disfrutado el mensaje tanto como yo disfruté creándolo, aunque sufriendo que jalara.
+  -->
 </body>
 </html>
