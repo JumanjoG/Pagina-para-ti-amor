@@ -584,127 +584,443 @@
       margin-top: 0.2rem;
     }
 
-    /* PROPUESTA PAGE */
-    #page-proposal {
-      max-width: 650px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
+    /* ═══════════════════════════════════════
+       YO PAGE STYLES
+    ═══════════════════════════════════════ */
+
+    /* HERO */
+    .yo-hero {
       text-align: center;
+      padding: 3.5rem 1.5rem 2rem;
+      max-width: 680px;
+      margin: 0 auto;
     }
 
-    .proposal-card {
-      background: rgba(16,8,24,0.85);
-      backdrop-filter: blur(20px);
-      border: 2px solid var(--dorado);
-      border-radius: 40px;
-      padding: 2.5rem 2rem;
-      box-shadow: 0 0 60px #b14ebf44;
+    .yo-hero-eyebrow {
+      font-family: 'Satisfy', cursive;
+      font-size: 1.1rem;
+      color: #9a85b8;
+      margin-bottom: 0.5rem;
+      font-style: italic;
     }
 
-    .proposal-card h2 {
+    .yo-hero-title {
       font-family: 'Abril Fatface', serif;
-      font-size: 2.5rem;
-      color: #ffd966;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 20px #ff69b4;
+      font-size: clamp(4rem, 14vw, 9rem);
+      background: linear-gradient(135deg, #f2e9ff 0%, #b14ebf 50%, #f5c542 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1;
+      display: inline-block;
     }
 
-    .proposal-card img {
-      max-width: 100%;
-      width: 420px;
-      border-radius: 24px;
-      border: 4px solid white;
-      margin: 1.5rem 0;
-      box-shadow: 0 0 50px #ffb3c666;
+    .yo-cursor {
+      animation: blink 1s step-end infinite;
+      color: #b14ebf;
+      -webkit-text-fill-color: #b14ebf;
     }
 
-    .proposal-card .proposal-text {
-      font-size: 1.5rem;
-      color: #f5cac3;
-      margin: 1.5rem 0;
-      line-height: 1.5;
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .yo-hero-sub {
+      font-size: 1.05rem;
+      color: #9a85b8;
+      margin-top: 0.8rem;
+      font-style: italic;
+      line-height: 1.6;
     }
 
-    .btn-row {
+    /* TABS DE CATEGORÍA */
+    .yo-tabs-wrapper {
       display: flex;
-      gap: 1.5rem;
       justify-content: center;
+      padding: 0 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .yo-tabs {
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(20,10,30,0.7);
+      padding: 0.4rem;
+      border-radius: 20px;
+      border: 1px solid #b14ebf33;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .prop-btn {
-      font-family: 'Abril Fatface', serif;
-      font-size: 1.6rem;
-      padding: 0.9rem 3rem;
+    .yo-tab {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.2rem;
+      border-radius: 14px;
       border: none;
-      border-radius: 50px;
+      background: transparent;
+      color: #9a85b8;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.25s;
     }
 
-    .btn-si {
-      background: linear-gradient(135deg, #56ab2f, #a8e063);
+    .yo-tab-icon { font-size: 1.1rem; }
+
+    .yo-tab:hover {
+      background: rgba(177,78,191,0.15);
+      color: #e0c8ff;
+    }
+
+    .yo-tab.active {
+      background: var(--cat-color, #b14ebf);
       color: white;
-      box-shadow: 0 0 25px #56ab2f88;
+      box-shadow: 0 4px 16px rgba(177,78,191,0.4);
     }
 
-    .btn-si:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 40px #4CAF50;
+    /* Colores por categoría */
+    .yo-tab[data-cat="miedos"].active   { background: #3b4b7a; box-shadow: 0 4px 16px #3b4b7a88; --cat-color:#3b4b7a; }
+    .yo-tab[data-cat="deseos"].active   { background: #b14ebf; box-shadow: 0 4px 16px #b14ebf88; --cat-color:#b14ebf; }
+    .yo-tab[data-cat="razones"].active  { background: #7a4bab; box-shadow: 0 4px 16px #7a4bab88; --cat-color:#7a4bab; }
+    .yo-tab[data-cat="dolores"].active  { background: #8b2244; box-shadow: 0 4px 16px #8b224488; --cat-color:#8b2244; }
+
+    /* ÁREA DE CONTENIDO */
+    .yo-content-area {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.2rem 4rem;
+      animation: fadeUp 0.4s ease;
     }
 
-    .btn-no {
-      background: linear-gradient(135deg, #cb2d3e, #ef473a);
-      color: white;
-      box-shadow: 0 0 25px #cb2d3e88;
+    /* HEADER DE CATEGORÍA */
+    .yo-cat-header {
+      text-align: center;
+      margin-bottom: 2rem;
     }
 
-    .btn-no:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 40px #f44336;
-    }
-
-    .no-response {
-      margin-top: 1.5rem;
-      font-size: 1.3rem;
-      color: #ffb6e7;
-      min-height: 2rem;
-      animation: fadeUp 0.3s ease;
-    }
-
-    .si-response {
-      margin-top: 2rem;
-    }
-
-    .si-response .big-msg {
+    .yo-cat-title {
       font-family: 'Abril Fatface', serif;
       font-size: 2rem;
-      color: var(--dorado);
-      margin-bottom: 1rem;
+      margin-bottom: 0.3rem;
     }
 
-    .whatsapp-link {
+    .yo-cat-desc {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: #9a85b8;
+    }
+
+    /* GRID DE TARJETAS */
+    .yo-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .yo-card {
+      border-radius: 20px;
+      padding: 1.4rem 1.6rem;
+      cursor: default;
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .yo-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .yo-card:hover { transform: translateY(-4px); }
+    .yo-card:hover::before { opacity: 1; }
+
+    /* Variantes por categoría */
+    .yo-card-miedos {
+      background: rgba(30,40,80,0.6);
+      border: 1px solid #3b4b7a66;
+      box-shadow: 0 4px 20px #1a2040aa;
+    }
+    .yo-card-miedos:hover { box-shadow: 0 8px 30px #3b4b7a66; }
+
+    .yo-card-deseos {
+      background: rgba(50,20,65,0.6);
+      border: 1px solid #b14ebf55;
+      box-shadow: 0 4px 20px #1a0828aa;
+    }
+    .yo-card-deseos:hover { box-shadow: 0 8px 30px #b14ebf55; }
+
+    .yo-card-razones {
+      background: rgba(40,20,70,0.6);
+      border: 1px solid #7a4bab55;
+      box-shadow: 0 4px 20px #18102aaa;
+    }
+    .yo-card-razones:hover { box-shadow: 0 8px 30px #7a4bab55; }
+
+    .yo-card-dolores {
+      background: rgba(50,10,25,0.6);
+      border: 1px solid #8b224455;
+      box-shadow: 0 4px 20px #200510aa;
+    }
+    .yo-card-dolores:hover { box-shadow: 0 8px 30px #8b224455; }
+
+    .yo-card-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+
+    .yo-card-miedos  .yo-card-label { color: #7b9fe8; }
+    .yo-card-deseos  .yo-card-label { color: #d88ae0; }
+    .yo-card-razones .yo-card-label { color: #a888d8; }
+    .yo-card-dolores .yo-card-label { color: #e08898; }
+
+    .yo-card-text {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: #e8e0f8;
+    }
+
+    /* Tarjeta especial (último item) */
+    .yo-card-special {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(40,20,70,0.8), rgba(20,10,40,0.9));
+      border-width: 2px;
+    }
+
+    .yo-card-special .yo-card-text {
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+
+    /* Contador de items */
+    .yo-count-badge {
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #9a85b8;
+      background: rgba(177,78,191,0.1);
+      border: 1px solid #b14ebf33;
+    }
+
+    @media (max-width: 500px) {
+      .yo-cards-grid { grid-template-columns: 1fr; }
+      .yo-tab span:not(.yo-tab-icon) { display: none; }
+      .yo-tab { padding: 0.6rem 0.9rem; }
+    }
+
+    /* ═══════════════════════════════════════
+       REPRODUCTOR DE CANCIONES
+    ═══════════════════════════════════════ */
+    .yo-player-wrapper {
+      max-width: 720px;
+      margin: 0 auto 4rem;
+      padding: 0 1.2rem;
+    }
+
+    .yo-player {
+      background: rgba(20, 10, 32, 0.85);
+      border: 1px solid #b14ebf44;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    }
+
+    .yo-player-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.4rem 1.6rem 1rem;
+      border-bottom: 1px solid #b14ebf22;
+    }
+
+    .yo-player-icon {
+      font-size: 2rem;
+      width: 48px; height: 48px;
+      background: rgba(177,78,191,0.15);
+      border: 1px solid #b14ebf44;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .yo-player-title {
+      font-family: 'Abril Fatface', serif;
+      font-size: 1.2rem;
+      color: #f2e9ff;
+    }
+
+    .yo-player-sub {
+      font-size: 0.85rem;
+      color: #7a6898;
+      margin-top: 0.1rem;
+      font-style: italic;
+    }
+
+    /* Lista */
+    .yo-song-list {
+      display: flex;
+      flex-direction: column;
+      padding: 0.6rem 0;
+    }
+
+    .yo-song-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.8rem 1.6rem;
+      background: transparent;
+      border: none;
+      color: #c8b8e8;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+      border-left: 3px solid transparent;
+    }
+
+    .yo-song-item:hover {
+      background: rgba(177,78,191,0.1);
+      color: #f2e9ff;
+    }
+
+    .yo-song-item.active {
+      background: rgba(177,78,191,0.15);
+      border-left-color: #b14ebf;
+      color: #f2e9ff;
+    }
+
+    .yo-song-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #5a4878;
+      width: 22px;
+      flex-shrink: 0;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .yo-song-item.active .yo-song-num { color: #b14ebf; }
+
+    .yo-song-info { flex: 1; min-width: 0; }
+
+    .yo-song-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .yo-song-label {
+      font-size: 0.78rem;
+      color: #7a6898;
+      margin-top: 0.1rem;
+      font-style: italic;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .yo-song-item.active .yo-song-label { color: #a888c8; }
+
+    .yo-song-type {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 0.2rem 0.6rem;
+      border-radius: 50px;
+      flex-shrink: 0;
+    }
+
+    .yo-song-type.yt {
+      background: rgba(255,0,0,0.15);
+      border: 1px solid rgba(255,0,0,0.3);
+      color: #ff6666;
+    }
+
+    .yo-song-type.sp {
+      background: rgba(30,215,96,0.12);
+      border: 1px solid rgba(30,215,96,0.3);
+      color: #1ed760;
+    }
+
+    /* Embed area */
+    .yo-player-embed {
+      border-top: 1px solid #b14ebf22;
+      background: #0a060f;
+      min-height: 0;
+      transition: min-height 0.3s ease;
+    }
+
+    .yo-player-embed.has-content {
+      min-height: 220px;
+    }
+
+    .yo-player-embed iframe {
+      width: 100%;
+      display: block;
+      border: none;
+    }
+
+    .yo-spotify-card {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.4rem 1.6rem;
+    }
+
+    .yo-spotify-icon {
+      width: 52px; height: 52px;
+      background: #1ed760;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      box-shadow: 0 0 20px #1ed76066;
+    }
+
+    .yo-spotify-info { flex: 1; }
+
+    .yo-spotify-info p {
+      font-size: 0.85rem;
+      color: #7a6898;
+      margin-bottom: 0.6rem;
+      font-style: italic;
+    }
+
+    .yo-spotify-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
-      margin-top: 1rem;
-      padding: 0.9rem 2rem;
-      background: #25D366;
-      color: white;
+      gap: 0.5rem;
+      padding: 0.55rem 1.2rem;
+      background: #1ed760;
+      color: #000;
       text-decoration: none;
       border-radius: 50px;
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      transition: all 0.3s;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.25s;
+      box-shadow: 0 4px 14px #1ed76044;
     }
 
-    .whatsapp-link:hover { background: #128C7E; transform: scale(1.05); }
+    .yo-spotify-btn:hover {
+      background: #17b84e;
+      transform: scale(1.04);
+    }
 
-    .si-img {
-      width: 260px;
-      border-radius: 24px;
-      margin-top: 1.5rem;
-      box-shadow: 0 0 40px #ff69b4;
+    @media (max-width: 500px) {
+      .yo-song-item { padding: 0.7rem 1rem; gap: 0.7rem; }
+      .yo-song-label { display: none; }
     }
 
     /*  MODAL DE CONTRASEÑA (EASTER EGG), segun internet asi es */
@@ -1291,7 +1607,7 @@
   <button class="nav-tab active" data-page="main"> Inicio</button>
   <button class="nav-tab" data-page="quiz"> Quiz TADC</button>
   <button class="nav-tab" data-page="tfc" id="tfc-nav-btn"> The Freak Circus</button>
-  <button class="nav-tab" data-page="proposal"> Sorpresa</button>
+  <button class="nav-tab" data-page="proposal">🤍 Yo</button>
 </nav>
 
 <!-- 
@@ -1390,40 +1706,118 @@
 </div>
 
 <!-- ═══════════════════════════════════
-     PROPUESTA PAGE
+     YO PAGE
 ═══════════════════════════════════ -->
 <div class="page hidden" id="page-proposal">
-  <div id="page-proposal-inner">
+  <div id="page-yo-inner">
 
-    <div id="proposal-main">
-      <div class="proposal-card fade-in">
-        <h2>💜 Para Marilu 💜</h2>
-        <img src="https://i.pinimg.com/1200x/4f/5e/72/4f5e725f77a36507446252ba24f05ca3.jpg" alt="Ramo de rosas blancas">
-        <p class="proposal-text">Entonces, ¿puedo ser tu novio?<br>Te quiero y espero que esto te guste.</p>
+    <!-- HERO -->
+    <div class="yo-hero">
+      <p class="yo-hero-eyebrow">para Marilu, con todo</p>
+      <h1 class="yo-hero-title">Yo<span class="yo-cursor">|</span></h1>
+      <p class="yo-hero-sub">Cosas que cargo, que deseo, por qué te quiero — y lo que duele.</p>
+    </div>
 
-        <div class="btn-row">
-          <button class="prop-btn btn-si" id="btn-si">SÍ 💚</button>
-          <button class="prop-btn btn-no" id="btn-no">NO ❌</button>
+    <!-- SELECTOR DE CATEGORÍAS -->
+    <div class="yo-tabs-wrapper">
+      <div class="yo-tabs" id="yo-tabs">
+        <button class="yo-tab active" data-cat="miedos">
+          <span class="yo-tab-icon">🌙</span>
+          <span>Miedos</span>
+        </button>
+        <button class="yo-tab" data-cat="deseos">
+          <span class="yo-tab-icon">✨</span>
+          <span>Deseos</span>
+        </button>
+        <button class="yo-tab" data-cat="razones">
+          <span class="yo-tab-icon">💜</span>
+          <span>Razones</span>
+        </button>
+        <button class="yo-tab" data-cat="dolores">
+          <span class="yo-tab-icon">🩸</span>
+          <span>Dolores</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- CONTENIDO DE CATEGORÍAS -->
+    <div class="yo-content-area" id="yo-content-area"></div>
+
+    <!-- REPRODUCTOR DE CANCIONES -->
+    <div class="yo-player-wrapper">
+      <div class="yo-player">
+        <div class="yo-player-header">
+          <span class="yo-player-icon">🎵</span>
+          <div>
+            <div class="yo-player-title">Canciones para ti</div>
+            <div class="yo-player-sub">Lo que escucho y pienso en ti</div>
+          </div>
         </div>
 
-        <div class="no-response" id="no-response"></div>
+        <!-- Lista de canciones -->
+        <div class="yo-song-list" id="yo-song-list">
+          <button class="yo-song-item active" data-idx="0">
+            <div class="yo-song-num">01</div>
+            <div class="yo-song-info">
+              <div class="yo-song-name">Lo que eres en mí</div>
+              <div class="yo-song-label">Lo que eres en mi vida</div>
+            </div>
+            <div class="yo-song-type yt">▶ YT</div>
+          </button>
+          <button class="yo-song-item" data-idx="1">
+            <div class="yo-song-num">02</div>
+            <div class="yo-song-info">
+              <div class="yo-song-name">Como nos imagino</div>
+              <div class="yo-song-label">Como nos imagino en algunas cosas</div>
+            </div>
+            <div class="yo-song-type yt">▶ YT</div>
+          </button>
+          <button class="yo-song-item" data-idx="2">
+            <div class="yo-song-num">03</div>
+            <div class="yo-song-info">
+              <div class="yo-song-name">Lo que eres para mí</div>
+              <div class="yo-song-label">Lo que eres para mí</div>
+            </div>
+            <div class="yo-song-type yt">▶ YT</div>
+          </button>
+          <button class="yo-song-item" data-idx="3">
+            <div class="yo-song-num">04</div>
+            <div class="yo-song-info">
+              <div class="yo-song-name">La escucho todos los días</div>
+              <div class="yo-song-label">La escucho pensando en ti</div>
+            </div>
+            <div class="yo-song-type sp">▶ YT</div>
+          </button>
+          <button class="yo-song-item" data-idx="4">
+            <div class="yo-song-num">05</div>
+            <div class="yo-song-info">
+              <div class="yo-song-name">Como a veces me siento</div>
+              <div class="yo-song-label">Como a veces me siento</div>
+            </div>
+            <div class="yo-song-type yt">▶ YT</div>
+          </button>
+        </div>
+
+        <!-- Área de reproducción -->
+        <div class="yo-player-embed" id="yo-player-embed">
+          <!-- Se llena por JS -->
+        </div>
       </div>
     </div>
-
-    <div id="si-response" class="hidden" style="text-align:center;padding:2rem 1rem;">
-      <div class="si-response">
-        <div class="big-msg">¡¡SÍ!! ¡Te amo muchísimo! 💜🎉</div>
-        <p style="font-size:1.3rem;color:#ddd0f0;margin-bottom:1rem;">Sinceramente no sé qué opinas de esto, solo quería hacerte algo especial. No es que cambie mucho, solo no sé, así soy ya sabes ❤️</p>
-        <a href="https://wa.me/526312011661" class="whatsapp-link" target="_blank">
-          <i class="fab fa-whatsapp"></i> Mándame un mensajito aquí
-        </a>
-        <br>
-        <img class="si-img" src="https://i.pinimg.com/736x/bf/44/63/bf446383e6d16ea0dccb17fa21a2c97f.jpg" alt="Jax feliz">
+<div class="yo-card yo-card-dolores yo-card-special">
+      <div class="yo-card-label">Y es que</div>
+      <div class="yo-card-text">Y simplemente es asi, te quiero, te aprecio, te amo y todo, no busco ser intenso, no busco incomodar ni busco lograr nada con esto, solo quiero expresar, mostrar y ser, no se si yo pueda ser demasiado, quizas lo he sido muchas veces
+        a veces me es dificil explicar simplemente como me siento, y a veces me da miedo que eso pueda ser demasiado o no ser lo que tu quieres o necesitas, pero no evito sentir como me siento, a veces solo por que te extraño, triste cuando te vas, siento que soy como pierrot y harlequin, te amo aun punto
+         que no es que sea una obsesion, por que puedo estar sin ti, pero aun asi quiero estar contigo, si me pongo a pensar, que muchos momentos te quiero conmigo, pero aunque pueda ser celoso de que quiera tenerte ese momento para mi, tampoco soy de los que te frenaria a que no estes ahi, no era sentirme de lado
+          no es que no quiera que tengas tu vida, tus cosas, tus planes, tus amigos, tu familia, tu trabajo, lo que sea, pero a veces me da miedo que no quieras compartir esos momentos conmigo, o que aunque quieras compartirlos conmigo, no se si yo pueda ser lo que quieres o necesitas en esos momentos, y eso me da miedo
+           por que no quiero ser un estorbo para ti, no quiero ser alguien de quien te tengas que preocupar o algo asi, solo quiero ser alguien con quien puedas contar para todo lo que necesites, alguien con quien puedas compartir todo lo que quieras compartir, alguien a quien puedas acudir para lo que sea, alguien a quien puedas amar como yo te amo
+            y es que simplemente te amo tanto, y a veces siento que no puedo expresar todo lo que siento por ti de la forma en la que quiero expresarlo, y eso me da miedo, por que no quiero sentirme asi, pero tampoco quiero evitar sentirlo por miedo a sentirlo demasiado o a no ser lo que tu quieres o necesitas, y se que repito mucho
+          parezco disco rayado jajajaja, no te pido algo serio ni formal, solo a veces me pregunto que soy yo para ti, a veces lo se y a veces siento que no, y eso me confunde mucho.
+        A veces me siento como Eve, quiero sentir un poco claro, que significo para ti</div>
       </div>
     </div>
-
   </div>
-</div>
+</div><!-- /page-proposal -->
 
 <!--  THE FREAK CIRCUS PAGE -->
 <div class="page hidden" id="page-tfc">
@@ -1764,6 +2158,10 @@ document.querySelectorAll('.nav-tab').forEach(tab => {
     }
 
     if (target === 'quiz' && !quizInitialized) initQuiz();
+    if (target === 'proposal') {
+      renderYoCategory(document.querySelector('.yo-tab.active')?.dataset.cat || 'miedos');
+      setTimeout(() => { if (currentSong === -1) loadSong(0); }, 100);
+    }
     revealOnScroll();
   });
 });
@@ -1914,30 +2312,6 @@ function showChars() {
   setTimeout(revealOnScroll, 100);
 }
 
-// 
-// PROPUESTA
-// 
-let noCount = 0;
-
-const noMessages = [
-  "¿Por qué no? Bueno quizás no pregunté bien... ¿Puedo ser tu novio, el amor de tu vida y corazón?",
-  "Creo que Oliver te movió el mouse... ¿intentemos de nuevo? ¿Puedo ser tu novio, tu hombre?",
-  "Bueno, sabes que no me rendiré. Demostraré que voy en serio... aunque igual puedes darle al SÍ de una vez, igual sabes que primero quiero verte"+
-  " No ocupo un titulo para demostrate como quiero ser y estar con vos"
-];
-
-document.getElementById('btn-si').addEventListener('click', () => {
-  document.getElementById('proposal-main').classList.add('hidden');
-  document.getElementById('si-response').classList.remove('hidden');
- 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-document.getElementById('btn-no').addEventListener('click', () => {
-  const msg = noMessages[Math.min(noCount, noMessages.length - 1)];
-  document.getElementById('no-response').textContent = msg;
-  noCount++;
-});
 
 // 
 // TFC PARTÍCULAS (rojo y verde)
@@ -2178,6 +2552,177 @@ function showTfcResult() {
 
   
 }
+
+// ══════════════════════════════════════
+// YO PAGE me pegare un tiro
+// ══════════════════════════════════════
+const YO_DATA = {
+  miedos: {
+    title: "Mis Miedos",
+    icon: "🌙",
+    desc: "Cosas que me dan miedo, pero que prefiero que sepas.",
+    accentColor: "#3b4b7a",
+    items: [
+      { label: "Miedo 1",  text: "Miedo a que no sepas cuánto te quiero" },
+      { label: "Miedo 2",  text: "Miedo a no demostrarte lo suficiente lo especial que eres" },
+      { label: "Miedo 3",  text: "Miedo a que un día dejes de sonreír por mi culpa" },
+      { label: "Miedo 4",  text: "Miedo a no estar a tu altura" },
+      { label: "Miedo 5",  text: "Miedo a perder cada detalle tuyo" },
+      { label: "Miedo 6",  text: "Miedo a que el tiempo pase y no aprovecharlo contigo" },
+      { label: "Miedo 7",  text: "Miedo a no poder hacerte tan feliz como mereces" },
+      { label: "Miedo 8",  text: "Miedo a que no entiendas lo que siento cuando te miro" },
+      { label: "Miedo 9",  text: "Miedo a despertar y que todo sea un sueño" },
+      { label: "Miedo 10", text: "Miedo a no tener las palabras para describirte lo que significas" },
+      { label: "Miedo 11", text: "Mi mayor miedo es no verte feliz", special: true },
+      { label: "Por qué",  text: "Por qué a veces no sé cómo sea para ti, si esto es para ti como lo es para mí, o qué podrá llegar a pasar", special: true }
+    ]
+  },
+  deseos: {
+    title: "Mis Deseos",
+    icon: "✨",
+    desc: "Todo lo que deseo, contigo y para ti.",
+    accentColor: "#b14ebf",
+    items: [
+      { label: "Deseo 1",  text: "Deseo verte feliz cada día de tu vida, estando a tu lado o aun sin estarlo" },
+      { label: "Deseo 2",  text: "Deseo crear millones de recuerdos contigo" },
+      { label: "Deseo 3",  text: "Deseo despertar y que siempre estés ahí" },
+      { label: "Deseo 4",  text: "Deseo cumplir todos tus sueños" },
+      { label: "Deseo 5",  text: "Deseo ser la razón de tu sonrisa" },
+      { label: "Deseo 6",  text: "Deseo viajar por el mundo a tu lado y con Oliver cuando se pueda" },
+      { label: "Deseo 7",  text: "Deseo que podamos vivir juntos lo que vayamos a vivir" },
+      { label: "Deseo 8",  text: "Deseo que nunca dudes de lo mucho que te quiero" },
+      { label: "Deseo 9",  text: "Deseo darte todo el amor que mereces" },
+      { label: "Deseo 10", text: "Deseo ser el padre de Oliver que tú quieres que sea" },
+      { label: "Deseo 11", text: "Deseo que cada día te sientas tan especial como eres", special: true  },
+      { label: "Deseo 12", text: "Deseo ser quien te haga sonreír cada mañana", special: true }
+    ]
+  },
+  razones: {
+    title: "Mis Razones",
+    icon: "💜",
+    desc: "Por qué te quiero. Y no son todas.",
+    accentColor: "#7a4bab",
+    items: [
+      { label: "Razón 1",  text: "Me gusta tu personalidad, para mí es única y especial" },
+      { label: "Razón 2",  text: "Me encanta tu compañía, cada momento se vuelve especial" },
+      { label: "Razón 3",  text: "Tienes una voz que me gusta escuchar, con la que me has hecho reír, calmar y alegrar" },
+      { label: "Razón 4",  text: "Me gusta escuchar mi nombre salir de tu boca" },
+      { label: "Razón 5",  text: "Existir a tu lado y tener tu compañía es indescriptible" },
+      { label: "Razón 6",  text: "Coincidimos en tantas cosas y aunque en otras no, siempre es especial" },
+      { label: "Razón 7",  text: "Siento que puedes existir sin mí y aun así me buscas" },
+      { label: "Razón 8",  text: "Puedo existir, pero aún siento que siempre te buscaré a ti" },
+      { label: "Razón 9",  text: "Me gusta incluirte en mis planes o mejor, que mis planes seas tú" },
+      { label: "Razón 10", text: "No es solo un sentimiento, es una elección, y me gusta elegirte" },
+      { label: "Razón 11", text: "Y no es que me guste y quiera, si no que amo, de la forma más pura y sincera te amo", special: true  },
+      { label: "Razón 12", text: "Eres maravillosa, amable, hermosa, divertida, única, trabajadora, fuerte, hábil, multitareas, con mucha historia, con una gran pasión, gran valor — y creo que no logras entender lo grandiosa que eres", special: true },
+      { label: "Razón 13", text: "No sabes lo mucho que me has hecho feliz en este tiempo, más que tantos en tantos años. No sé si siempre será así, aun con la adversidad, aun con cualquier cosa — si me das la oportunidad, quiero luchar por estar a tu lado", special: true },
+      { label: "Razón 14", text: "Si leíste todas, no son todas. Hay más.", special: true }
+    ]
+  },
+  dolores: {
+    title: "Lo que Duele",
+    icon: "🐈‍⬛",
+    desc: "Cosas que callo, pero que siento.",
+    accentColor: "#8b2244",
+    items: [
+      { label: "Dolor 1",  text: "Duele no poder estar contigo cuando lo necesito o cuando lo necesitas" },
+      { label: "Dolor 2",  text: "Duele cuando siento que no soy suficiente para ti" },
+      { label: "Dolor 3",  text: "Duele pensar que tal vez lo estoy haciendo mal" },
+      { label: "Dolor 4",  text: "Duele no saber si lo que hago llega a ti como yo quiero que llegue" },
+      { label: "Dolor 5",  text: "Duele no poder decirte en persona todo lo que te digo aquí" },
+      { label: "Dolor 6",  text: "Duele quererte, amarte tanto y a veces no encontrar las palabras" },
+      { label: "Dolor 7",  text: "Duele imaginar que puedas sentirte sola mientras yo existo", special: true },
+      { label: "Pero",     text: "Aunque duela, no cambiaría nada, porque todo lo que duele también significa que es real, que importa, que tú me importas, y eso vale más que cualquier cosa para mi, vales mucho para mi.", special: true }
+    ]
+  }
+};
+
+function renderYoCategory(cat) {
+  const data = YO_DATA[cat];
+  const area = document.getElementById('yo-content-area');
+
+  const cardsHTML = data.items.map(item => `
+    <div class="yo-card yo-card-${cat} ${item.special ? 'yo-card-special' : ''}">
+      <div class="yo-card-label">${item.label}</div>
+      <div class="yo-card-text">${item.text}</div>
+    </div>
+  `).join('');
+
+  area.innerHTML = `
+    <div class="yo-cat-header">
+      <div class="yo-count-badge">${data.items.length} ${data.title.toLowerCase()}</div>
+      <h2 class="yo-cat-title" style="color:${data.accentColor}">${data.icon} ${data.title}</h2>
+      <p class="yo-cat-desc">${data.desc}</p>
+    </div>
+    <div class="yo-cards-grid">${cardsHTML}</div>
+  `;
+
+  area.style.animation = 'none';
+  area.offsetHeight;
+  area.style.animation = 'fadeUp 0.4s ease';
+}
+
+document.querySelectorAll('.yo-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.yo-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    renderYoCategory(tab.dataset.cat);
+    window.scrollTo({ top: document.getElementById('yo-content-area').offsetTop - 80, behavior: 'smooth' });
+  });
+});
+
+// ══════════════════════════════════════
+// REPRODUCTOR DE CANCIONES
+// ══════════════════════════════════════
+const SONGS = [
+  { type: 'youtube', id: '682Cjf-dp7w', name: 'Lo que eres en mí',      label: 'Lo que eres en mi vida' },
+  { type: 'youtube', id: '4Y5DAMjC028', name: 'Como nos imagino',       label: 'Como nos imagino en algunas cosas' },
+  { type: 'youtube', id: 'EcfEajB2F8s', name: 'Lo que eres para mí',   label: 'Lo que eres para mí' },
+  { type: 'youtube', id: 'WKM5jRAUgvU', name: 'La escucho todos los días', label: 'Lo hago desde que me la mandaste' },
+  { type: 'youtube', id: 'D6XR9GfBfwY', name: 'Como a veces me siento', label: 'Como a veces me siento' }
+];
+
+let currentSong = -1;
+
+function loadSong(idx) {
+  if (idx === currentSong) return;
+  currentSong = idx;
+
+  document.querySelectorAll('.yo-song-item').forEach((btn, i) => {
+    btn.classList.toggle('active', i === idx);
+  });
+
+  const song = SONGS[idx];
+  const embedArea = document.getElementById('yo-player-embed');
+  embedArea.classList.add('has-content');
+
+  if (song.type === 'youtube') {
+    embedArea.innerHTML = `
+      <iframe
+        src="https://www.youtube.com/embed/${song.id}?autoplay=1&rel=0&modestbranding=1&color=white"
+        height="215"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>`;
+  } else if (song.type === 'spotify') {
+    embedArea.innerHTML = `
+      <div class="yo-spotify-card">
+        <div class="yo-spotify-icon">♫</div>
+        <div class="yo-spotify-info">
+          <p>Esta canción está en Spotify — dale aquí para escucharla 🎵</p>
+          <a class="yo-spotify-btn"
+             href="https://open.spotify.com/track/${song.id}"
+             target="_blank" rel="noopener">
+            Abrir en Spotify
+          </a>
+        </div>
+      </div>`;
+  }
+}
+
+document.querySelectorAll('.yo-song-item').forEach((btn, i) => {
+  btn.addEventListener('click', () => loadSong(i));
+});
 </script>
 
 <!--
